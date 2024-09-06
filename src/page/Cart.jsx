@@ -1,15 +1,10 @@
 import React from 'react';
-import { useCart } from '../contexts/CartContext'; // Correct relative path
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItemFromCart, updateItemQuantity } from '../Component/cartSlice';
 
 const Cart = () => {
-  const { cartItems, removeItemFromCart, updateItemQuantity } = useCart();
-
-  const handleQuantityChange = (id, newQuantity) => {
-    if (isNaN(newQuantity) || newQuantity <= 0) {
-      return; // Ignore invalid input
-    }
-    updateItemQuantity(id, parseInt(newQuantity, 10));
-  };
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
 
   const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -34,18 +29,20 @@ const Cart = () => {
                 />
                 <div className="ml-6 flex-1">
                   <h2 className="text-2xl font-semibold text-gray-800">{item.name}</h2>
-                  <p className="text-gray-600 mt-1">Price: ${item.price}</p>
+                  <p className="text-gray-600 mt-1">Price: Rs {item.price}</p>
                   <div className="flex items-center mt-4">
                     <input
                       type="number"
                       min="1"
                       value={item.quantity}
-                      onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+                      onChange={(e) =>
+                        dispatch(updateItemQuantity({ id: item.id, quantity: parseInt(e.target.value, 10) }))
+                      }
                       className="w-20 px-2 py-1 border rounded-lg focus:ring-2 focus:ring-blue-500"
                     />
                     <button
                       className="ml-4 text-red-600 hover:text-red-800"
-                      onClick={() => removeItemFromCart(item.id)}
+                      onClick={() => dispatch(removeItemFromCart(item.id))}
                     >
                       Remove
                     </button>
@@ -58,7 +55,7 @@ const Cart = () => {
 
         {cartItems.length > 0 && (
           <div className="mt-10 flex justify-between items-center">
-            <h2 className="text-2xl font-bold text-gray-800">Total: ${totalAmount.toFixed(2)}</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Total: Rs {totalAmount.toFixed(2)}</h2>
             <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300">
               Proceed to Checkout
             </button>

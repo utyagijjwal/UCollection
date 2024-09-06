@@ -18,12 +18,6 @@ import Footer from './Component/Footer';
 import Signin from './page/Signin';
 import Return from './page/Return';
 import Cart from './page/Cart';
-// import CartProvider from './page/Cartcontext'
-
-// import { CartProvider } from './page/Cartcontext';
-// import CartProvider  from './page/CartProvider';
-import useCart  from './page/Cartcontext';
-
 function App() { 
   return (
     <BrowserRouter>
@@ -41,8 +35,6 @@ function App() {
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/return" element={<Return/>}/>
       <Route path="/cart" element={<Cart/>}/>
-
-      
     </Routes>
     </useCart>
     <Footer />
