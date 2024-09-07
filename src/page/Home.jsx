@@ -3,20 +3,15 @@ import Detail from "../Component/Detail";
 import Slider from "../Component/Slider";
 import Product from "../Component/Product";
 
-
-const Home = () =>{
-    return(
-        <>
-       
-       <Detail/>
-       <Slider/>
-       <Product/>
-        
-       
-        </>
-        
-
+const Home = () => {
+    return (
+        <div>
+            <Detail />
+            <Slider />
+            <Product />
+        </div>
     );
 
 };
+
 export default Home;

@@ -3,7 +3,7 @@ import React from 'react'; // Ensure React is imported
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 
 import './App.css';
-import './index.css';
+
 import Home from'./page/Home';
 import Navbar from'./Component/Navbar';
 import Allproduct from './page/Allproduct';

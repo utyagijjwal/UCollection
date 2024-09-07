@@ -13,7 +13,7 @@ const Signin = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Sign In to Ujjwal Collection</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Sign In to U Mart</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2" htmlFor="email">Email Address</label>

@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-black text-gray-300 py-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h2 className="text-xl font-semibold text-white mb-4">Ujjwal Collection</h2>
+          <h2 className="text-xl font-semibold text-white mb-4">U Mart</h2>
           <p className="text-gray-400">
             Discover the best products in mobiles, electronics, home & kitchen, computer, and car & bike.
           </p>

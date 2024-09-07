@@ -10,9 +10,9 @@ const Detail = () => {
         <div className="flex flex-wrap justify-center space-x-4">
 
            {/* Home */}
-           <button className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
+           <Link to="/" className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
             Home
-          </button>
+          </Link>
           
           {/* All Product */}
           <Link to="/allproduct" className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
@@ -40,12 +40,12 @@ const Detail = () => {
           </Link>
 
           {/* Car & Bike */}
-          <Link to="Bike" className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
+          <Link to="/Bike" className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
             Car & Bike
           </Link>
 
           {/* Sports */}
-          <Link to="sports" className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
+          <Link to="/sports" className="category-button bg-gray-800 hover:bg-orange-600 text-white py-3 px-5 rounded-lg shadow-md focus:outline-none">
             Sports
           </Link>
         </div>
